@@ -7,6 +7,8 @@
 	<script type="text/javascript" src='angular.js'></script>
 
 	<script type="text/javascript" src='app.js'></script>
+	<script type="text/javascript" src='appService.js'></script>
+	<script type="text/javascript" src='appController.js'></script>
 
 
 </head>
@@ -19,6 +21,14 @@
 	<input type="text" name="titulo" ng-model='titulo'/>
 
 	<button type="button" data-ng-click='limpiar()'>Boton</button>
+
+	<div data-ng-repeat='usuario in usuarios'>
+		<h3>
+			<strong>{{ usuario.username }}</strong>
+			<i>{{ usuario.password }}</i>
+		</h3>
+	</div>
+
 
 </body>
 </html>
