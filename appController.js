@@ -4,13 +4,24 @@
 	var app = angular.module('app');
 
 	app.controller('mainCtrl', function($scope, userService){
-		$scope.titulo = 'Hola mundo';
+		$scope.nombre = '';
+		$scope.edad = '';
 
 		$scope.usuarios = userService.users;
 
-		$scope.limpiar = function(){
-			$scope.titulo = 'Hola';
+		$scope.agregar = function(){
+			
+			var obj = {
+				nombre : $scope.nombre,
+			  edad : $scope.edad
+			}
+
+			$scope.usuarios.push(obj);
+
+			$scope.nombre = '';
+			$scope.edad = '';
 		}
+		
 	});
 
 })();

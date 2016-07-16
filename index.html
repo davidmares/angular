@@ -4,6 +4,8 @@
 
 	<meta charset="utf-8">
 	<title>Practica</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
 	<script type="text/javascript" src='angular.js'></script>
 
 	<script type="text/javascript" src='app.js'></script>
@@ -14,20 +16,35 @@
 </head>
 <body data-ng-controller='mainCtrl'>
 
-	<h1>
-		{{titulo}}
-	</h1>
+<div class="container">
 
-	<input type="text" name="titulo" ng-model='titulo'/>
+	<div class="row">
+		<div class="col-md-4 col-xs-4">
 
-	<button type="button" data-ng-click='limpiar()'>Boton</button>
+			<div class="form-group">
+				<label for='nombre'>Nombre</label>
+				<input id='nombre' class='form-control' type="text" name="nombre" placeholder="nombre" data-ng-model='nombre'/> <br>
+			</div>
+			
+		</div>
+	</div>
+	
+
+	<label>Edad</label>
+	<input type="text" name="edad" placeholder="edad" data-ng-model='edad'/> <br>
+
+	<button type="button" data-ng-click="agregar()">Agregar</button>
 
 	<div data-ng-repeat='usuario in usuarios'>
 		<h3>
-			<strong>{{ usuario.username }}</strong>
-			<i>{{ usuario.password }}</i>
+			<strong>{{ usuario.nombre }}</strong>
+			<i>{{ usuario.edad }}</i>
 		</h3>
 	</div>
+	
+
+	
+</div>
 
 
 </body>
